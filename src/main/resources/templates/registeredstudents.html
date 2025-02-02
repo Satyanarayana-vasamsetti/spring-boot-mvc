@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Registered Students</h1>
+	
+	<table border="1">
+
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>firstname</th>
+				<th>lastname</th>
+				<th>username</th>
+				<th>email</th>
+				<th>password</th>
+				<th>phonenumber</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="user:${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.firstname}"></td>
+				<td th:text="${user.lastname}"></td>
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.password}"></td>
+				<td th:text="${user.phonenumber}"></td>
+			</tr>
+		</tbody>
+		
+
+	</table>
+	
+	<hr>
+	<a href="/register/adduser">add user</a>
+
+
+</body>
+</html>
